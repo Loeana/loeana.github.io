@@ -3,3 +3,37 @@ layout: default
 title: My test page
 ---
 
+
+<section class="post-list">
+  <ul>
+    {% for post in paginator.posts %}
+      {% unless post.tags contains "link" %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>
+          <strong>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</strong>
+          <a href="{{ post.url }}">Read more...</a>
+        </p>
+      </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+
+  <nav class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
+    {% else %}
+    <span class="previous">&laquo;</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+    {% else %}
+    <span class="next ">&raquo;</span>
+    {% endif %}
+  </nav>
+
+  {% include author.html %}
+
+</section>
