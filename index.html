@@ -5,19 +5,12 @@ title: My test page
 
 
 <section class="post-list">
-  <ul>
-    {% for post in paginator.posts %}
-      {% unless post.tags contains "link" %}
-      <li>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <p>
-          <strong>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</strong>
-          <a href="{{ post.url }}">Read more...</a>
-        </p>
-      </li>
-      {% endunless %}
-    {% endfor %}
-  </ul>
+	<ul>
+		{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
 
 </section>
