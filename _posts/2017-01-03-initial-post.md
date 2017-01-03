@@ -1,5 +1,14 @@
 --- 
-layout: post 
+layout: default
 title: Initial post 
 ---
-Just to check if it works.
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+	</head>
+	
+	<body>
+		Just to check if it works.
+	</body>
+</html>
