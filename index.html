@@ -20,20 +20,4 @@ title: My test page
     {% endfor %}
   </ul>
 
-  <nav class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
-    {% else %}
-    <span class="previous">&laquo;</span>
-    {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
-    {% else %}
-    <span class="next ">&raquo;</span>
-    {% endif %}
-  </nav>
-
-  {% include author.html %}
-
 </section>
