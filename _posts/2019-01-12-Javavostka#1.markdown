@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Javawostka #1"
-date:   2016-02-12 17:50:00
+date:   2019-01-12 19:50:00
 categories: main
 ---
 
